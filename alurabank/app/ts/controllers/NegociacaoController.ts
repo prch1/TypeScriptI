@@ -8,6 +8,7 @@ class NegociacaoController
     private  _negociacoes = new Negociacoes(); //funciona dessa forma resumida também;
     //private  _negociacoes : Negociacoes = new Negociacoes(); definir o tipo e instanciar 
     private _negociacoesView = new NegociacoesView('#negociacoesView');
+    private _mensagemView = new MensagemView('#mensagemView');
 
       //Conversão do tipo muito generico para um bem especifico de forma implicita
 
@@ -16,6 +17,8 @@ class NegociacaoController
       this._inputData = <HTMLInputElement>document.querySelector('#data');
       this._inputQuantidade = <HTMLInputElement>document.querySelector('#quantidade');
       this._inputValor = <HTMLInputElement>document.querySelector('#valor');
+      this._negociacoesView.update(this._negociacoes);
+
     }
 
     adiciona(event : Event)
@@ -32,8 +35,9 @@ class NegociacaoController
             );
 
             this._negociacoes.adiciona(negociacao);
-
             this._negociacoesView.update(this._negociacoes);
+            this._mensagemView.update('Negociação adicionada');
+
 
            /*
             //console.log(this._negociacoes.paraArray()); exibir tudo de uma vez
