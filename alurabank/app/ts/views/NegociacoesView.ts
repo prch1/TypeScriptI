@@ -26,7 +26,6 @@ class NegociacoesView extends View<Negociacoes>{
                      </tr>
                    `).join('')}
 
-
             </tbody>
 
             <tfoot>
